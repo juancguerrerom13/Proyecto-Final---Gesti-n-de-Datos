@@ -1,0 +1,60 @@
+table Bancos
+	lineageTag: b9ec7e3c-6a49-4f86-a14d-1c5d891e2bfe
+
+	column codigo_entidad
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f8c67d63-baff-487b-a194-966d170515fa
+		summarizeBy: none
+		sourceColumn: codigo_entidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Banco
+		dataType: string
+		lineageTag: ae7d0ad2-7db0-4123-ae49-479b08b57f76
+		summarizeBy: none
+		sourceColumn: Banco
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupo
+		dataType: string
+		lineageTag: db891c1e-be97-44de-85b5-06ffe497347b
+		summarizeBy: none
+		sourceColumn: Grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Razón social'
+		dataType: string
+		lineageTag: f47a6101-e63e-4270-80d8-6c8335ef80d3
+		summarizeBy: none
+		sourceColumn: Razón social
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Bancos = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaDatos & "quejas_bancos.parquet")),
+				    Columnas = Table.Distinct(Table.SelectColumns(Origen, {"codigo_entidad", "banco", "es_davivienda"})),
+				    Tipos = Table.TransformColumnTypes(Columnas, {{"codigo_entidad", Int64.Type}, {"banco", type text}, {"es_davivienda", type logical}}),
+				    // Nombre corto y legible del banco (mismas reglas que el punto 6 del notebook)
+				    Especiales = [#"BANCO BILBAO VIZCAYA ARGENTARIA COLOMBIA S.A." = "BBVA Colombia", #"LAMBDA BANK S.A." = "Lambda Bank", #"BANCO COMERCIAL AV VILLAS S.A." = "AV Villas", #"ITAÚ COLOMBIA S.A." = "Itaú"],
+				    Corto = (n as text) as text =>
+				        let
+				            SinSufijo = List.Accumulate({" S.A. BIC", " S.A.", " S.A"}, n, (t, s) => if Text.EndsWith(t, s) then Text.Start(t, Text.Length(t) - Text.Length(s)) else t),
+				            Propio = List.Accumulate({{" De ", " de "}, {" Del ", " del "}, {" La ", " la "}, {" Las ", " las "}}, Text.Proper(Text.Trim(SinSufijo)), (s, r) => Text.Replace(s, r{0}, r{1}))
+				        in
+				            Record.FieldOrDefault(Especiales, n, Propio),
+				    ConNombre = Table.AddColumn(Tipos, "Banco", each Corto([banco]), type text),
+				    ConGrupo = Table.AddColumn(ConNombre, "Grupo", each if [es_davivienda] then "Davivienda" else "Demás bancos", type text),
+				    Final = Table.RenameColumns(Table.SelectColumns(ConGrupo, {"codigo_entidad", "Banco", "Grupo", "banco"}), {{"banco", "Razón social"}})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

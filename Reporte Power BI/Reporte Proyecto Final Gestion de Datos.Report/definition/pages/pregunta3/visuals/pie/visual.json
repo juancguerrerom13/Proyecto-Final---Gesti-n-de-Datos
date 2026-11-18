@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "pie",
+  "position": {
+    "x": 24,
+    "y": 690,
+    "z": 6000,
+    "height": 26,
+    "width": 1232,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Fuente: Superintendencia Financiera de Colombia (datos.gov.co: xyy7-rn7p, sr9n-792w) y Superintendencia de Sociedades (6cat-2gcs). Datos descargados el 16/11/2026. Las series mensuales excluyen febrero de 2026 (sin datos) y septiembre de 2026 (incompleto).",
+                    "textStyle": {
+                      "fontSize": "7.5pt",
+                      "color": "#7d8188"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

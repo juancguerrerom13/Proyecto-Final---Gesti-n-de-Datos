@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "tit",
+  "position": {
+    "x": 48,
+    "y": 24,
+    "z": 0,
+    "height": 124,
+    "width": 1184,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "EL PROBLEMA",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1 de cada 7 quejas contra los bancos del país es contra Davivienda",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Es el segundo banco con más quejas, y en 2026 sus quejas crecen más rápido que las del sector",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

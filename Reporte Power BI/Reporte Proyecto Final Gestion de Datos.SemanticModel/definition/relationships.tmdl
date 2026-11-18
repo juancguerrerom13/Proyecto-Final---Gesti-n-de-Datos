@@ -1,0 +1,12 @@
+relationship 42a42757-d12e-4239-a716-0a63ac14453b
+	fromColumn: Quejas.codigo_entidad
+	toColumn: Bancos.codigo_entidad
+
+relationship 3d4dfed6-e28c-4023-8e7a-64c94f95fce0
+	fromColumn: Quejas.fecha
+	toColumn: Calendario.fecha
+
+relationship 42aea576-ca9c-45bb-993c-2f3506556e65
+	fromColumn: Quejas.Departamento
+	toColumn: ContextoDepto.Departamento
+

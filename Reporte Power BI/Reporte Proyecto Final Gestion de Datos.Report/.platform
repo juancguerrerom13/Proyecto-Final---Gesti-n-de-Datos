@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Reporte Proyecto Final Gestion de Datos"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4306de72-fec1-4246-b3c7-c8672aa1ad58"
+  }
+}

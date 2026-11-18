@@ -1,0 +1,5 @@
+expression RutaDatos = "C:\Users\pacag\OneDrive\Escritorio\Paca\Maestría Analitica Inteligenica de Negocios\Semestre I\Gestión de Datos\Proyecto Final\work\data\processed\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ff85853a-04d6-487f-b22e-b4ce0930612c
+
+	annotation PBI_ResultType = Text
+

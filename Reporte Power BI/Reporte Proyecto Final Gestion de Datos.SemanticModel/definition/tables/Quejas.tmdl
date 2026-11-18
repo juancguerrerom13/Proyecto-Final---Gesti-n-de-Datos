@@ -1,0 +1,252 @@
+table Quejas
+	lineageTag: f95eb8d6-cee9-4270-8d6d-10649068af0b
+
+	measure 'Total quejas' = SUM(Quejas[Cantidad de quejas])
+		formatString: #,0
+		displayFolder: Base
+		lineageTag: eb33e6ad-cfda-49f9-800d-069987fd47c3
+
+	measure 'Quejas Davivienda' = CALCULATE([Total quejas], KEEPFILTERS(Bancos[Grupo] = "Davivienda"))
+		formatString: #,0
+		displayFolder: Base
+		lineageTag: a08fac75-189b-40c1-a69b-e7dac2e39074
+
+	measure 'Quejas demás bancos' = CALCULATE([Total quejas], KEEPFILTERS(Bancos[Grupo] = "Demás bancos"))
+		formatString: #,0
+		displayFolder: Base
+		lineageTag: 1cbbe1d5-bdd7-43e2-acff-1d223d865dff
+
+	measure 'Quejas a bancos analizadas' = CALCULATE([Total quejas], REMOVEFILTERS(Bancos))
+		formatString: #,0
+		displayFolder: Portada
+		lineageTag: e16b7974-3564-455b-8662-7866384c73a1
+
+	measure 'Bancos comparados' = CALCULATE(DISTINCTCOUNT(Bancos[Banco]), REMOVEFILTERS(Bancos))
+		formatString: 0
+		displayFolder: Portada
+		lineageTag: 5cb2dd00-0a04-4a70-b41e-43a5623f0a81
+
+	measure 'Meses con datos' = CALCULATE(COUNTROWS(Calendario), Calendario[mes_sin_datos] = FALSE())
+		formatString: 0
+		displayFolder: Portada
+		lineageTag: c7604796-ce2d-4ab1-8bb7-994e9a87112f
+
+	measure 'Participación entre bancos' = DIVIDE([Quejas Davivienda], CALCULATE([Total quejas], REMOVEFILTERS(Bancos)))
+		formatString: 0.0%
+		displayFolder: Pregunta 1
+		lineageTag: 511330ee-b4eb-493a-83e0-ffe903b23e7a
+
+	measure 'Participación Davivienda' = DIVIDE([Quejas Davivienda], CALCULATE([Total quejas], REMOVEFILTERS(Bancos)))
+		formatString: 0.0%
+		displayFolder: Pregunta 1
+		lineageTag: 90246cd2-d9c6-4a1b-816c-d567cb0e1150
+
+	measure 'Participación Bancolombia' = DIVIDE(CALCULATE([Total quejas], REMOVEFILTERS(Bancos), Bancos[Banco] = "Bancolombia"), CALCULATE([Total quejas], REMOVEFILTERS(Bancos)))
+		formatString: 0.0%
+		displayFolder: Pregunta 1
+		lineageTag: a0000581-088e-4981-a741-b0945666375f
+
+	measure 'Puesto entre bancos' =
+			VAR quejasMarca = [Quejas Davivienda]
+			RETURN
+			    IF(
+			        NOT ISBLANK(quejasMarca),
+			        COUNTROWS(FILTER(ALL(Bancos), [Total quejas] > quejasMarca)) + 1
+			    )
+		formatString: 0
+		displayFolder: Pregunta 1
+		lineageTag: 3adb15f7-1ced-4d65-9fc5-869b77ac6dc3
+
+	measure 'Promedio mensual Davivienda' =
+			CALCULATE(
+			    AVERAGEX(VALUES(Calendario[fecha]), [Quejas Davivienda]),
+			    KEEPFILTERS(Calendario[mes_completo] = TRUE())
+			)
+		formatString: #,0
+		displayFolder: Pregunta 1
+		lineageTag: 8db464ab-b476-48a8-b3d8-476290691dd5
+
+	measure 'Ingresos Grupo Bolívar' = CALCULATE(SUM(GrupoBolivar[Ingresos operacionales]), TREATAS(VALUES(Calendario[Año]), GrupoBolivar[Año]))
+		formatString: 0.00
+		displayFolder: Pregunta 1
+		lineageTag: 7c837358-408e-4962-8d68-d1bf90f6a779
+
+	measure 'Ganancia Grupo Bolívar' = CALCULATE(SUM(GrupoBolivar[Ganancia]), TREATAS(VALUES(Calendario[Año]), GrupoBolivar[Año]))
+		formatString: 0.00
+		displayFolder: Pregunta 1
+		lineageTag: 5ef18614-a06f-4cc3-b0e6-1a7a6dc6e6a0
+
+	measure 'Davivienda (% del total)' = DIVIDE([Quejas Davivienda], CALCULATE([Quejas Davivienda], ALLSELECTED(Quejas[Categoría de motivo]), ALLSELECTED(Quejas[Motivo]), ALLSELECTED(Quejas[Familia de producto]), ALLSELECTED(Quejas[Producto]), ALLSELECTED(Quejas[Departamento]), ALLSELECTED(Quejas[Municipio]), ALLSELECTED(Quejas[Instancia])))
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: 85bde6d9-3047-4e78-9ee7-342fcaf06ab0
+
+	measure 'Demás bancos (% del total)' = DIVIDE([Quejas demás bancos], CALCULATE([Quejas demás bancos], ALLSELECTED(Quejas[Categoría de motivo]), ALLSELECTED(Quejas[Motivo]), ALLSELECTED(Quejas[Familia de producto]), ALLSELECTED(Quejas[Producto]), ALLSELECTED(Quejas[Departamento]), ALLSELECTED(Quejas[Municipio]), ALLSELECTED(Quejas[Instancia])))
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: 7bdbfa06-f3c5-46d4-8378-37cdd9cf3f41
+
+	measure 'Diferencia (pp)' = ([Davivienda (% del total)] - [Demás bancos (% del total)]) * 100
+		formatString: +0.0;-0.0;0.0
+		displayFolder: Pregunta 2
+		lineageTag: 9f071699-a57d-4c8e-804c-c26aacf19e38
+
+	measure '% por fraude y seguridad' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Categoría de motivo] = "Fraude y seguridad"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Categoría de motivo])))
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: cb071870-43fb-4e0e-ae2b-2114d0271412
+
+	measure 'Fraude Davivienda' = [% por fraude y seguridad]
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: 76ce9d93-5748-451f-970c-9fff7db48b26
+
+	measure 'Fraude demás bancos' = DIVIDE(CALCULATE([Quejas demás bancos], Quejas[Categoría de motivo] = "Fraude y seguridad"), CALCULATE([Quejas demás bancos], REMOVEFILTERS(Quejas[Categoría de motivo])))
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: 61b5ace3-4a98-4c9b-bf1d-47e7fe1b4c87
+
+	measure '% tarjetas de crédito' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Familia de producto] = "Tarjetas de crédito"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Familia de producto])))
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: 362e67d3-73f8-4116-808f-13d6b0c10df5
+
+	measure 'Tarjetas demás bancos' = DIVIDE(CALCULATE([Quejas demás bancos], Quejas[Familia de producto] = "Tarjetas de crédito"), CALCULATE([Quejas demás bancos], REMOVEFILTERS(Quejas[Familia de producto])))
+		formatString: 0.0%
+		displayFolder: Pregunta 2
+		lineageTag: 7caef2c8-560f-4f2c-96f0-66c913d2049a
+
+	measure '% ante la Superintendencia' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Instancia] = "Superintendencia Financiera de Colombia"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Instancia])))
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: fff16f03-d5b6-4614-91a1-5112d340fba1
+
+	measure 'Ante la SFC Davivienda' = [% ante la Superintendencia]
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: 513a022b-e11d-43a4-a406-52b01ba1e816
+
+	measure 'Ante la SFC demás bancos' = DIVIDE(CALCULATE([Quejas demás bancos], Quejas[Instancia] = "Superintendencia Financiera de Colombia"), CALCULATE([Quejas demás bancos], REMOVEFILTERS(Quejas[Instancia])))
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: d92f94b6-241a-43e2-a2f2-65d690a9d88c
+
+	measure '% ante el Defensor' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Instancia] = "Defensor del consumidor financiero"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Instancia])))
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: a4296a21-e337-4789-8fb0-17b15f5c6fa8
+
+	measure '% en Bogotá' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Departamento] = "BOGOTÁ, D.C."), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Departamento])))
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: b299f329-890e-4c15-8519-4587068fe311
+
+	measure 'Quejas por gran empresa' =
+			VAR razon = DIVIDE([Quejas Davivienda], SUM(ContextoDepto[Grandes empresas]))
+			VAR puesto = RANKX(ALLSELECTED(ContextoDepto[Departamento]), [Quejas Davivienda])
+			-- Solo los 10 departamentos con más quejas, como en el punto 6.9 del notebook
+			RETURN IF(puesto <= 10, razon)
+		formatString: 0.0
+		displayFolder: Pregunta 3
+		lineageTag: 8710c955-2136-4b31-bacb-b1aca64a1585
+
+	column fecha
+		dataType: dateTime
+		isHidden
+		formatString: dd/mm/yyyy
+		lineageTag: fbe7a390-9d3c-4e32-90a9-e3b4f64d74d1
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_entidad
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a4089050-927e-42dc-a7fb-e558cd196b79
+		summarizeBy: none
+		sourceColumn: codigo_entidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Instancia
+		dataType: string
+		lineageTag: 020ca724-c856-4b14-8204-63ee0e963292
+		summarizeBy: none
+		sourceColumn: Instancia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Motivo
+		dataType: string
+		lineageTag: 03c229e2-766a-4c1b-82f1-57d2b716315d
+		summarizeBy: none
+		sourceColumn: Motivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Producto
+		dataType: string
+		lineageTag: a28571ea-2d18-470a-a1aa-4fb04aa05180
+		summarizeBy: none
+		sourceColumn: Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Departamento
+		dataType: string
+		lineageTag: 5bbf6954-b4e8-4fd4-9360-4528ede930a8
+		summarizeBy: none
+		sourceColumn: Departamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Municipio
+		dataType: string
+		lineageTag: 370a9df2-28a1-482a-b337-eddbf3688a89
+		summarizeBy: none
+		sourceColumn: Municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cantidad de quejas'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 69e58e83-6b19-4419-86a1-0cc4883be64d
+		summarizeBy: sum
+		sourceColumn: Cantidad de quejas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Familia de producto'
+		dataType: string
+		lineageTag: ab2e2c0c-ad57-4695-9c8a-9650f3c4b0e2
+		summarizeBy: none
+		sourceColumn: Familia de producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Categoría de motivo'
+		dataType: string
+		lineageTag: c6465995-3e9a-4c54-a974-050b6deecb5c
+		summarizeBy: none
+		sourceColumn: Categoría de motivo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Quejas = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaDatos & "quejas_bancos.parquet")),
+				    Columnas = Table.SelectColumns(Origen, {"fecha", "codigo_entidad", "instancia_recepcion", "motivo", "producto", "departamento", "municipio", "cantidad_quejas_recibidas", "familia_producto", "categoria_motivo"}),
+				    Tipos = Table.TransformColumnTypes(Columnas, {{"fecha", type date}, {"codigo_entidad", Int64.Type}, {"cantidad_quejas_recibidas", Int64.Type}, {"instancia_recepcion", type text}, {"motivo", type text}, {"producto", type text}, {"departamento", type text}, {"municipio", type text}, {"familia_producto", type text}, {"categoria_motivo", type text}}),
+				    Nombres = Table.RenameColumns(Tipos, {{"instancia_recepcion", "Instancia"}, {"motivo", "Motivo"}, {"producto", "Producto"}, {"departamento", "Departamento"}, {"municipio", "Municipio"}, {"cantidad_quejas_recibidas", "Cantidad de quejas"}, {"familia_producto", "Familia de producto"}, {"categoria_motivo", "Categoría de motivo"}})
+				in
+				    Nombres
+
+	annotation PBI_ResultType = Table
+

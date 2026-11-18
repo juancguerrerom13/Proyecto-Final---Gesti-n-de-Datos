@@ -1,0 +1,153 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "det",
+  "position": {
+    "x": 648,
+    "y": 446,
+    "z": 10000,
+    "height": 236,
+    "width": 608,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quejas"
+                    }
+                  },
+                  "Property": "Motivo"
+                }
+              },
+              "queryRef": "Quejas.Motivo",
+              "nativeQueryRef": "Motivo"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quejas"
+                    }
+                  },
+                  "Property": "Quejas Davivienda"
+                }
+              },
+              "queryRef": "Quejas.Quejas Davivienda",
+              "nativeQueryRef": "Quejas Davivienda"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quejas"
+                    }
+                  },
+                  "Property": "Davivienda (% del total)"
+                }
+              },
+              "queryRef": "Quejas.Davivienda (% del total)",
+              "nativeQueryRef": "Davivienda (% del total)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quejas"
+                    }
+                  },
+                  "Property": "Demás bancos (% del total)"
+                }
+              },
+              "queryRef": "Quejas.Demás bancos (% del total)",
+              "nativeQueryRef": "Demás bancos (% del total)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quejas"
+                    }
+                  },
+                  "Property": "Diferencia (pp)"
+                }
+              },
+              "queryRef": "Quejas.Diferencia (pp)",
+              "nativeQueryRef": "Diferencia (pp)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Quejas"
+                  }
+                },
+                "Property": "Quejas Davivienda"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Motivos específicos de las quejas contra Davivienda'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Diferencia en puntos porcentuales frente a los demás bancos'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

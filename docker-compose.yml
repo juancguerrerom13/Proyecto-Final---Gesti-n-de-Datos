@@ -1,0 +1,16 @@
+services:
+  jupyter:
+    build: .
+    image: gestion-datos-proyecto:latest
+    container_name: gestion-datos-jupyter
+    ports:
+      # Solo accesible desde la máquina local
+      - "127.0.0.1:8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      # Carpeta de trabajo (datos y salidas)
+      - ./work:/home/jovyan/work
+      # Notebook del proyecto
+      - ./notebooks:/home/jovyan/notebooks
+    restart: unless-stopped

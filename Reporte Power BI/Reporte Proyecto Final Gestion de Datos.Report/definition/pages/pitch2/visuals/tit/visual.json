@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "tit",
+  "position": {
+    "x": 48,
+    "y": 24,
+    "z": 0,
+    "height": 124,
+    "width": 1184,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "LAS CAUSAS",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "El fraude es el problema propio de la marca",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "En 2026, casi dos de cada tres quejas contra Davivienda son por fraude y seguridad: el doble que en los demás bancos",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

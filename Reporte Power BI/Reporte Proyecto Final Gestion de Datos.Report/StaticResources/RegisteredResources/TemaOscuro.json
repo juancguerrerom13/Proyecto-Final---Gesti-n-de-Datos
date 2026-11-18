@@ -1,0 +1,299 @@
+{
+  "name": "Oscuro Davivienda",
+  "dataColors": [
+    "#3987e5",
+    "#8b8f96",
+    "#d95926",
+    "#199e70",
+    "#c98500",
+    "#d55181",
+    "#0ca30c",
+    "#9085e9"
+  ],
+  "background": "#181b1f",
+  "foreground": "#e6e7e8",
+  "tableAccent": "#3987e5",
+  "backgroundLight": "#22252b",
+  "backgroundNeutral": "#2c3235",
+  "foregroundNeutralSecondary": "#a7abb1",
+  "foregroundNeutralTertiary": "#7d8188",
+  "good": "#0ca30c",
+  "neutral": "#c98500",
+  "bad": "#e66767",
+  "textClasses": {
+    "callout": {
+      "fontSize": 24,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#f4f5f6"
+    },
+    "title": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#e6e7e8"
+    },
+    "header": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#e6e7e8"
+    },
+    "label": {
+      "fontSize": 9,
+      "fontFace": "Segoe UI",
+      "color": "#a7abb1"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#181b1f"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#2c3235"
+              }
+            },
+            "radius": 6
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#e6e7e8"
+              }
+            },
+            "fontSize": 11,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "subTitle": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            },
+            "fontSize": 9
+          }
+        ],
+        "visualHeader": [
+          {
+            "background": {
+              "solid": {
+                "color": "#181b1f"
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            },
+            "border": {
+              "solid": {
+                "color": "#2c3235"
+              }
+            }
+          }
+        ],
+        "categoryAxis": [
+          {
+            "labelColor": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            },
+            "titleColor": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            },
+            "gridlineColor": {
+              "solid": {
+                "color": "#2c3235"
+              }
+            },
+            "showAxisTitle": false
+          }
+        ],
+        "valueAxis": [
+          {
+            "labelColor": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            },
+            "titleColor": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            },
+            "gridlineColor": {
+              "solid": {
+                "color": "#2c3235"
+              }
+            },
+            "showAxisTitle": false
+          }
+        ],
+        "legend": [
+          {
+            "labelColor": {
+              "solid": {
+                "color": "#c7cbd0"
+              }
+            },
+            "position": "Top"
+          }
+        ],
+        "labels": [
+          {
+            "color": {
+              "solid": {
+                "color": "#d8d9da"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#0f1114"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#0b0c0e"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "textbox": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "items": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#d8d9da"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "#22252b"
+              }
+            }
+          }
+        ],
+        "header": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#a7abb1"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#e6e7e8"
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": "#22252b"
+              }
+            }
+          }
+        ],
+        "values": [
+          {
+            "fontColorPrimary": {
+              "solid": {
+                "color": "#d8d9da"
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": "#181b1f"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "#d8d9da"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "#1d2025"
+              }
+            }
+          }
+        ],
+        "grid": [
+          {
+            "gridHorizontalColor": {
+              "solid": {
+                "color": "#2c3235"
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": "#2c3235"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

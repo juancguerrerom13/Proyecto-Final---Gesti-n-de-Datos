@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Reporte Proyecto Final Gestion de Datos"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2c54720e-e487-4dbc-b9e1-4c2041dffc8a"
+  }
+}

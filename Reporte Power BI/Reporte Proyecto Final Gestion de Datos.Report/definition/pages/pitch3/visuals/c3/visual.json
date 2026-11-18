@@ -1,0 +1,170 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "c3",
+  "position": {
+    "x": 856,
+    "y": 164,
+    "z": 3000,
+    "height": 430,
+    "width": 376,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Qué haríamos con financiación",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "●  ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Automatizar la descarga mensual y enviar alertas cuando un indicador cambie.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "●  ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Ajustar las quejas por número de clientes, un dato que hoy no está disponible.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "●  ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Validar con la entidad las categorías de motivos y producto.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "●  ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Extender el monitor a las demás empresas del Grupo Bolívar.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#181b1f'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2c3235'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

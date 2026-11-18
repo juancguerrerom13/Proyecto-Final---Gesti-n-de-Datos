@@ -1,0 +1,16 @@
+# Jupyter y Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Variables de entorno locales
+.env
+
+# Power BI: caché y configuración local de cada equipo
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

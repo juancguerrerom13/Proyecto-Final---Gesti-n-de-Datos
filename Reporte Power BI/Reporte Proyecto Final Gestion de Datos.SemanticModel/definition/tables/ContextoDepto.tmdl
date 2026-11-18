@@ -1,0 +1,35 @@
+table ContextoDepto
+	lineageTag: adc902b5-3129-4370-837e-9dfeac4adf1d
+
+	column Departamento
+		dataType: string
+		lineageTag: 363b6a3d-9739-4b37-bc52-1b0c8f9d3a1c
+		summarizeBy: none
+		sourceColumn: Departamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grandes empresas'
+		dataType: int64
+		formatString: #,0
+		lineageTag: ba8ae523-3d77-405d-87b1-240bac048de3
+		summarizeBy: sum
+		sourceColumn: Grandes empresas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ContextoDepto = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaDatos & "empresas.parquet")),
+				    Columnas = Table.TransformColumnTypes(Table.SelectColumns(Origen, {"nit", "a_o_de_corte", "departamento"}), {{"nit", Int64.Type}, {"a_o_de_corte", Int64.Type}, {"departamento", type text}}),
+				    // Grandes empresas por departamento en el último año de corte (mismo criterio que el punto 5.2)
+				    UltimoCorte = Table.SelectRows(Columnas, each [a_o_de_corte] = List.Max(Columnas[a_o_de_corte]) and [departamento] <> null),
+				    Agrupado = Table.Group(UltimoCorte, {"departamento"}, {{"Grandes empresas", each List.Count(List.Distinct([nit])), Int64.Type}}),
+				    Nombres = Table.RenameColumns(Agrupado, {{"departamento", "Departamento"}})
+				in
+				    Nombres
+
+	annotation PBI_ResultType = Table
+

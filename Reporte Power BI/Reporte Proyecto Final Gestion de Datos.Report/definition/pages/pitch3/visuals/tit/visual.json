@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "tit",
+  "position": {
+    "x": 48,
+    "y": 24,
+    "z": 0,
+    "height": 124,
+    "width": 1184,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "LA PROPUESTA",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Un monitor mensual de la reputación de Davivienda",
+                    "textStyle": {
+                      "fontSize": "28pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Con datos públicos y oficiales, comparado siempre contra los demás bancos del país",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

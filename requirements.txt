@@ -1,0 +1,16 @@
+# Librerías del proyecto (solo las autorizadas en .claude/CLAUDE.md).
+# pandas, numpy, scipy, matplotlib, seaborn, requests y pyarrow ya vienen en la
+# imagen base quay.io/jupyter/scipy-notebook; se listan sin fijar versión para
+# documentar la dependencia sin forzar reinstalaciones ni cambios de versión.
+pandas
+numpy
+scipy
+matplotlib
+seaborn
+requests
+pyarrow
+# No incluidas en la imagen base: se instalan con versión fija.
+jsonpath-ng==1.16.0
+python-dotenv==1.2.4
+# sqlite3 viene incluido en la librería estándar de Python (no se instala).
+# ydata-profiling se excluye: obliga a bajar de versión pandas, numpy, scipy y matplotlib.

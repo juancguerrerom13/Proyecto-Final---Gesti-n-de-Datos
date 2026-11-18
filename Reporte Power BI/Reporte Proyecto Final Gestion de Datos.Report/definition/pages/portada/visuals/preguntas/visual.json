@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "preguntas",
+  "position": {
+    "x": 652,
+    "y": 398,
+    "z": 7000,
+    "height": 270,
+    "width": 580,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Las tres preguntas",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1  ",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Evolución y posición: ¿las quejas contra Davivienda crecen y gana o pierde participación frente a los demás bancos?",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2  ",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Causas: ¿qué motivos y productos concentran las quejas y cuáles son propios de la marca?",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3  ",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Gestión y territorio: ¿cuántas quejas llegan al regulador y dónde se concentra la insatisfacción?",
+                    "textStyle": {
+                      "fontSize": "10.5pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

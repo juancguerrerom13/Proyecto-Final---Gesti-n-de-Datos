@@ -1,0 +1,52 @@
+table GrupoBolivar
+	lineageTag: 4d5ef613-f7fb-42dd-bad4-614ea32996a7
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: f8cde492-9094-4cc0-8f73-231015d44ea1
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ingresos operacionales'
+		dataType: double
+		formatString: 0.00
+		lineageTag: bda183aa-6314-4e6b-a840-2a1986f2a765
+		summarizeBy: sum
+		sourceColumn: Ingresos operacionales
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ganancia
+		dataType: double
+		formatString: 0.00
+		lineageTag: 0f4a5d43-c338-4c49-8ab4-2c537884dd0b
+		summarizeBy: sum
+		sourceColumn: Ganancia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total activos'
+		dataType: double
+		formatString: 0.00
+		lineageTag: 6a077f27-1bf8-4f00-ad7c-8338215c9c4c
+		summarizeBy: sum
+		sourceColumn: Total activos
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GrupoBolivar = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaDatos & "grupo_bolivar.parquet")),
+				    Columnas = Table.SelectColumns(Origen, {"a_o_de_corte", "ingresos_operacionales", "ganancia_p_rdida", "total_activos"}),
+				    Tipos = Table.TransformColumnTypes(Columnas, {{"a_o_de_corte", Int64.Type}, {"ingresos_operacionales", type number}, {"ganancia_p_rdida", type number}, {"total_activos", type number}}),
+				    Nombres = Table.RenameColumns(Tipos, {{"a_o_de_corte", "Año"}, {"ingresos_operacionales", "Ingresos operacionales"}, {"ganancia_p_rdida", "Ganancia"}, {"total_activos", "Total activos"}})
+				in
+				    Nombres
+
+	annotation PBI_ResultType = Table
+

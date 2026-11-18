@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "grupo",
+  "position": {
+    "x": 48,
+    "y": 196,
+    "z": 1000,
+    "height": 64,
+    "width": 1184,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Grupo:  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#a7abb1",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Luis Alberto Banda · Maria Camila Rincón · Juan Pablo Marin · Gabriel Camilo Velasquez · Juan Camilo Guerrero",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pontificia Universidad Javeriana · Departamento de Ingeniería de Sistemas",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#7d8188"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

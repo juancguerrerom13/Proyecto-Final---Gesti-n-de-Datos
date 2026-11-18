@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "tit",
+  "position": {
+    "x": 48,
+    "y": 40,
+    "z": 0,
+    "height": 150,
+    "width": 1184,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "PROYECTO FINAL · GESTIÓN DE DATOS",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Reputación de Banco Davivienda",
+                    "textStyle": {
+                      "fontSize": "34pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Lo que dicen las quejas de sus clientes frente a los demás bancos del país, 2023–2026",
+                    "textStyle": {
+                      "fontSize": "15pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

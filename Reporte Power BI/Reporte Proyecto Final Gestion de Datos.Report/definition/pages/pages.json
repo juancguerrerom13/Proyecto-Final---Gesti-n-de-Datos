@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+  "pageOrder": [
+    "portada",
+    "pitch1",
+    "pitch2",
+    "pitch3",
+    "pregunta1",
+    "pregunta2",
+    "pregunta3"
+  ],
+  "activePageName": "portada"
+}

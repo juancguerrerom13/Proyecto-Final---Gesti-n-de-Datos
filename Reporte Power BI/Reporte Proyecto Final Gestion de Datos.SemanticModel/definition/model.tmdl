@@ -1,0 +1,23 @@
+model Model
+	culture: es-CO
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CO
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["RutaDatos","Quejas","Bancos","Calendario","GrupoBolivar","ContextoDepto"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Quejas
+ref table Bancos
+ref table Calendario
+ref table GrupoBolivar
+ref table ContextoDepto
+
+ref cultureInfo es-CO
+
