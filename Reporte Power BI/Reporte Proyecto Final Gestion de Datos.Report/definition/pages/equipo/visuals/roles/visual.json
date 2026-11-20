@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "roles",
   "position": {
     "x": 24,
@@ -21,9 +21,9 @@
                   {
                     "value": "Roles",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontSize": "14pt",
-                      "color": "#f4f5f6",
-                      "fontWeight": "bold"
+                      "color": "#f4f5f6"
                     }
                   }
                 ]
@@ -33,13 +33,13 @@
                   {
                     "value": "Juan Camilo Guerrero  ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontSize": "11pt",
-                      "color": "#e6e7e8",
-                      "fontWeight": "bold"
+                      "color": "#e6e7e8"
                     }
                   },
                   {
-                    "value": "Entorno de desarrollo, estructura del notebook y agente de IA",
+                    "value": "Entorno de desarrollo, estructura del notebook, agente de IA y Dashboard",
                     "textStyle": {
                       "fontSize": "11pt",
                       "color": "#a7abb1"
@@ -52,9 +52,9 @@
                   {
                     "value": "Luis Alberto Banda  ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontSize": "11pt",
-                      "color": "#e6e7e8",
-                      "fontWeight": "bold"
+                      "color": "#e6e7e8"
                     }
                   },
                   {
@@ -71,9 +71,9 @@
                   {
                     "value": "Maria Camila Rincón  ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontSize": "11pt",
-                      "color": "#e6e7e8",
-                      "fontWeight": "bold"
+                      "color": "#e6e7e8"
                     }
                   },
                   {
@@ -90,9 +90,9 @@
                   {
                     "value": "Juan Pablo Marin  ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontSize": "11pt",
-                      "color": "#e6e7e8",
-                      "fontWeight": "bold"
+                      "color": "#e6e7e8"
                     }
                   },
                   {
@@ -109,9 +109,9 @@
                   {
                     "value": "Gabriel Camilo Velasquez  ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontSize": "11pt",
-                      "color": "#e6e7e8",
-                      "fontWeight": "bold"
+                      "color": "#e6e7e8"
                     }
                   },
                   {
