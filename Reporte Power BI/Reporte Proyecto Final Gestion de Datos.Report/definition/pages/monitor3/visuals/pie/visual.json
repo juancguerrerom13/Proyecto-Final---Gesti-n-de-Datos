@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "pie",
+  "position": {
+    "x": 24.066852367688025,
+    "y": 683.67688022284131,
+    "z": 10000,
+    "height": 36.545961002785518,
+    "width": 1019.7214484679666,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Clic en cualquier barra, punto o fila para filtrar la página (Ctrl + clic en Desktop para los botones). Series mensuales con meses completos. Fuente: Superintendencia Financiera de Colombia y Superintendencia de Sociedades (datos.gov.co). Corte: 16/11/2026.",
+                    "textStyle": {
+                      "fontSize": "7.5pt",
+                      "color": "#7d8188"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

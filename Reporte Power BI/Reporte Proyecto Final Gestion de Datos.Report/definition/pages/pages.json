@@ -5,9 +5,11 @@
     "pitch1",
     "pitch2",
     "pitch3",
-    "pregunta1",
-    "pregunta2",
-    "pregunta3"
+    "pitch4",
+    "monitor1",
+    "monitor2",
+    "monitor3",
+    "equipo"
   ],
-  "activePageName": "portada"
+  "activePageName": "pitch4"
 }

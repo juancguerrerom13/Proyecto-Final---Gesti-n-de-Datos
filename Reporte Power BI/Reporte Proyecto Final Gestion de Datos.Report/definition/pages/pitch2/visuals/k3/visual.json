@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "k3",
   "position": {
-    "x": 832,
-    "y": 468,
-    "z": 4000,
-    "height": 136,
+    "x": 856,
+    "y": 108,
+    "z": 3000,
+    "height": 104,
     "width": 400,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "Quejas"
                     }
                   },
-                  "Property": "% ante la Superintendencia"
+                  "Property": "% tarjetas de crédito"
                 }
               },
-              "queryRef": "Quejas.% ante la Superintendencia",
-              "nativeQueryRef": "% ante la Superintendencia"
+              "queryRef": "Quejas.% tarjetas de crédito",
+              "nativeQueryRef": "% tarjetas de crédito"
             }
           ]
         }
@@ -51,7 +51,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "30D"
+                  "Value": "26D"
                 }
               }
             },
@@ -89,7 +89,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             }

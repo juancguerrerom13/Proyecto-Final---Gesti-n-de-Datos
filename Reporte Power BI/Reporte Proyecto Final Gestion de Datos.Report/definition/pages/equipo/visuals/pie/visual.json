@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "pie",
+  "position": {
+    "x": 24,
+    "y": 684,
+    "z": 5000,
+    "height": 26,
+    "width": 1020,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Detalle en el punto 7 del notebook y en la sección 8 del reporte.",
+                    "textStyle": {
+                      "fontSize": "7.5pt",
+                      "color": "#7d8188"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

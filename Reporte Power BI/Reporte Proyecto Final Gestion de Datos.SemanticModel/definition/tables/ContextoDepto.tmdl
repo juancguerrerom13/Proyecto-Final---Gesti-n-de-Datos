@@ -1,9 +1,9 @@
 table ContextoDepto
-	lineageTag: adc902b5-3129-4370-837e-9dfeac4adf1d
+	lineageTag: 7b767e6e-5b89-448b-88f7-85821f7fc767
 
 	column Departamento
 		dataType: string
-		lineageTag: 363b6a3d-9739-4b37-bc52-1b0c8f9d3a1c
+		lineageTag: 66ddfbbd-f688-4fb0-a6ca-260c41039c85
 		summarizeBy: none
 		sourceColumn: Departamento
 
@@ -12,7 +12,7 @@ table ContextoDepto
 	column 'Grandes empresas'
 		dataType: int64
 		formatString: #,0
-		lineageTag: ba8ae523-3d77-405d-87b1-240bac048de3
+		lineageTag: dfe5442e-61af-4330-a563-799683ee4779
 		summarizeBy: sum
 		sourceColumn: Grandes empresas
 

@@ -1,10 +1,10 @@
 table Calendario
-	lineageTag: 4d476894-6c59-4604-b554-f9795feed4d3
+	lineageTag: 4badf133-244c-4b8b-95f8-f64a94244647
 
 	column fecha
 		dataType: dateTime
 		formatString: mmm yyyy
-		lineageTag: c9748756-d9f9-4b8d-9fce-e238d820fc26
+		lineageTag: 62138485-9c9b-4b2a-85f2-7c2281dabbe1
 		summarizeBy: none
 		sourceColumn: fecha
 
@@ -15,7 +15,7 @@ table Calendario
 	column mes_sin_datos
 		dataType: boolean
 		isHidden
-		lineageTag: 7410e06d-6cf6-4e7d-9fb9-ba1aa164af4d
+		lineageTag: e197d522-a0e5-4a68-a4c7-7a1998f6d28d
 		summarizeBy: none
 		sourceColumn: mes_sin_datos
 
@@ -24,7 +24,7 @@ table Calendario
 	column mes_incompleto
 		dataType: boolean
 		isHidden
-		lineageTag: bfa2ddfb-6eb6-487c-b0d5-6b10204e7c32
+		lineageTag: 5d08d5b7-f1c9-4dc3-ae3a-f419237da789
 		summarizeBy: none
 		sourceColumn: mes_incompleto
 
@@ -33,7 +33,7 @@ table Calendario
 	column mes_completo
 		dataType: boolean
 		isHidden
-		lineageTag: 6cd91336-a10f-424c-8e3b-8aec695fe4b1
+		lineageTag: c9244811-1689-473c-8d48-9695a8338600
 		summarizeBy: none
 		sourceColumn: mes_completo
 
@@ -42,7 +42,7 @@ table Calendario
 	column anio_parcial
 		dataType: boolean
 		isHidden
-		lineageTag: c5e44c27-d18d-48a6-8131-198760c845c6
+		lineageTag: 28c98067-4afa-4833-8803-a7f3bc4ba1fa
 		summarizeBy: none
 		sourceColumn: anio_parcial
 
@@ -51,15 +51,34 @@ table Calendario
 	column Año
 		dataType: int64
 		formatString: 0
-		lineageTag: f80e22b9-31b5-4c39-a052-e6d7dee5d0a3
+		lineageTag: 3c77c0e4-9b51-4e1e-a61c-14765d4d8c47
 		summarizeBy: none
 		sourceColumn: Año
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Número de mes'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 65207195-bd41-489f-bf04-ac8c28dc5044
+		summarizeBy: none
+		sourceColumn: Número de mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: 607cb9dc-b0ba-42dc-9e6b-8b527d3a3ac1
+		summarizeBy: none
+		sourceColumn: Mes
+		sortByColumn: 'Número de mes'
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'Mes y año'
 		dataType: string
-		lineageTag: 5cc4f7a2-3f07-4d75-9a95-df381a83f1a4
+		lineageTag: b9aa0ac6-ccc5-45b5-ae2a-e45a5ac92508
 		summarizeBy: none
 		sourceColumn: Mes y año
 		sortByColumn: fecha
@@ -68,7 +87,7 @@ table Calendario
 
 	column 'Estado del mes'
 		dataType: string
-		lineageTag: 60d2a46f-b99d-4993-8d6b-8c371ee0e140
+		lineageTag: f248e4d7-41bc-4460-bc82-7be436caa56c
 		summarizeBy: none
 		sourceColumn: Estado del mes
 
@@ -81,8 +100,11 @@ table Calendario
 				    Origen = Parquet.Document(File.Contents(RutaDatos & "calendario.parquet")),
 				    Tipos = Table.TransformColumnTypes(Origen, {{"fecha", type date}, {"mes_sin_datos", type logical}, {"mes_incompleto", type logical}, {"mes_completo", type logical}, {"anio_parcial", type logical}}),
 				    Anio = Table.AddColumn(Tipos, "Año", each Date.Year([fecha]), Int64.Type),
-				    Mes = Table.AddColumn(Anio, "Mes y año", each Date.ToText([fecha], [Format = "MMM yyyy", Culture = "es-CO"]), type text),
-				    Estado = Table.AddColumn(Mes, "Estado del mes", each if [mes_sin_datos] then "Sin datos" else if [mes_incompleto] then "Incompleto" else "Completo", type text)
+				    NumMes = Table.AddColumn(Anio, "Número de mes", each Date.Month([fecha]), Int64.Type),
+				    // Nombre del mes en español para el segmentador (enero, febrero, ...)
+				    NombreMes = Table.AddColumn(NumMes, "Mes", each Text.Proper(Date.ToText([fecha], [Format = "MMMM", Culture = "es-CO"])), type text),
+				    MesAnio = Table.AddColumn(NombreMes, "Mes y año", each Date.ToText([fecha], [Format = "MMM yyyy", Culture = "es-CO"]), type text),
+				    Estado = Table.AddColumn(MesAnio, "Estado del mes", each if [mes_sin_datos] then "Sin datos" else if [mes_incompleto] then "Incompleto" else "Completo", type text)
 				in
 				    Estado
 

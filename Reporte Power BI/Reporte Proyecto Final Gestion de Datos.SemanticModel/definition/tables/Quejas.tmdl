@@ -1,50 +1,45 @@
 table Quejas
-	lineageTag: f95eb8d6-cee9-4270-8d6d-10649068af0b
+	lineageTag: 8556d673-dd7c-443a-a481-6f71ead930a0
 
 	measure 'Total quejas' = SUM(Quejas[Cantidad de quejas])
 		formatString: #,0
 		displayFolder: Base
-		lineageTag: eb33e6ad-cfda-49f9-800d-069987fd47c3
+		lineageTag: f737bba0-7228-4c59-961d-bd59e9040624
 
 	measure 'Quejas Davivienda' = CALCULATE([Total quejas], KEEPFILTERS(Bancos[Grupo] = "Davivienda"))
 		formatString: #,0
 		displayFolder: Base
-		lineageTag: a08fac75-189b-40c1-a69b-e7dac2e39074
+		lineageTag: 3d20b5a4-0fdd-405d-97df-a6c41291e99c
 
 	measure 'Quejas demás bancos' = CALCULATE([Total quejas], KEEPFILTERS(Bancos[Grupo] = "Demás bancos"))
 		formatString: #,0
 		displayFolder: Base
-		lineageTag: 1cbbe1d5-bdd7-43e2-acff-1d223d865dff
+		lineageTag: ed6e46c6-fe51-42c5-8e5c-d145a35c8582
 
 	measure 'Quejas a bancos analizadas' = CALCULATE([Total quejas], REMOVEFILTERS(Bancos))
 		formatString: #,0
 		displayFolder: Portada
-		lineageTag: e16b7974-3564-455b-8662-7866384c73a1
+		lineageTag: fbe41b2c-bdba-4c4d-a9e8-7a13d3f19e19
 
 	measure 'Bancos comparados' = CALCULATE(DISTINCTCOUNT(Bancos[Banco]), REMOVEFILTERS(Bancos))
 		formatString: 0
 		displayFolder: Portada
-		lineageTag: 5cb2dd00-0a04-4a70-b41e-43a5623f0a81
-
-	measure 'Meses con datos' = CALCULATE(COUNTROWS(Calendario), Calendario[mes_sin_datos] = FALSE())
-		formatString: 0
-		displayFolder: Portada
-		lineageTag: c7604796-ce2d-4ab1-8bb7-994e9a87112f
+		lineageTag: 923a1299-47c1-4376-aa8c-dc776fd89d68
 
 	measure 'Participación entre bancos' = DIVIDE([Quejas Davivienda], CALCULATE([Total quejas], REMOVEFILTERS(Bancos)))
 		formatString: 0.0%
 		displayFolder: Pregunta 1
-		lineageTag: 511330ee-b4eb-493a-83e0-ffe903b23e7a
+		lineageTag: 36d2295a-e03f-432b-b12b-cd59c5775d0d
 
 	measure 'Participación Davivienda' = DIVIDE([Quejas Davivienda], CALCULATE([Total quejas], REMOVEFILTERS(Bancos)))
 		formatString: 0.0%
 		displayFolder: Pregunta 1
-		lineageTag: 90246cd2-d9c6-4a1b-816c-d567cb0e1150
+		lineageTag: 3ce64757-f2b2-4cfc-a1c4-1f4f098c6a0e
 
 	measure 'Participación Bancolombia' = DIVIDE(CALCULATE([Total quejas], REMOVEFILTERS(Bancos), Bancos[Banco] = "Bancolombia"), CALCULATE([Total quejas], REMOVEFILTERS(Bancos)))
 		formatString: 0.0%
 		displayFolder: Pregunta 1
-		lineageTag: a0000581-088e-4981-a741-b0945666375f
+		lineageTag: a1b972c1-4a69-4ebd-86e6-31db0b912ed3
 
 	measure 'Puesto entre bancos' =
 			VAR quejasMarca = [Quejas Davivienda]
@@ -55,7 +50,7 @@ table Quejas
 			    )
 		formatString: 0
 		displayFolder: Pregunta 1
-		lineageTag: 3adb15f7-1ced-4d65-9fc5-869b77ac6dc3
+		lineageTag: 011f188b-c3be-4580-8183-aa57c116b283
 
 	measure 'Promedio mensual Davivienda' =
 			CALCULATE(
@@ -64,82 +59,99 @@ table Quejas
 			)
 		formatString: #,0
 		displayFolder: Pregunta 1
-		lineageTag: 8db464ab-b476-48a8-b3d8-476290691dd5
+		lineageTag: 87e02125-1997-40ac-bc65-3e64a34cd7fe
+
+	measure 'Promedio del año' =
+			-- Promedio mensual del año calendario (meses completos), como referencia en la serie mensual
+			CALCULATE([Promedio mensual Davivienda], ALLEXCEPT(Calendario, Calendario[Año]))
+		formatString: #,0
+		displayFolder: Pregunta 1
+		lineageTag: 2ced35dd-e99e-45b8-bf0d-6b61fc41c487
 
 	measure 'Ingresos Grupo Bolívar' = CALCULATE(SUM(GrupoBolivar[Ingresos operacionales]), TREATAS(VALUES(Calendario[Año]), GrupoBolivar[Año]))
 		formatString: 0.00
 		displayFolder: Pregunta 1
-		lineageTag: 7c837358-408e-4962-8d68-d1bf90f6a779
+		lineageTag: 4469dd09-51df-4709-b83f-ac473cff1064
 
 	measure 'Ganancia Grupo Bolívar' = CALCULATE(SUM(GrupoBolivar[Ganancia]), TREATAS(VALUES(Calendario[Año]), GrupoBolivar[Año]))
 		formatString: 0.00
 		displayFolder: Pregunta 1
-		lineageTag: 5ef18614-a06f-4cc3-b0e6-1a7a6dc6e6a0
+		lineageTag: 5c43e4ae-3514-465b-8311-f7e863b0665f
 
 	measure 'Davivienda (% del total)' = DIVIDE([Quejas Davivienda], CALCULATE([Quejas Davivienda], ALLSELECTED(Quejas[Categoría de motivo]), ALLSELECTED(Quejas[Motivo]), ALLSELECTED(Quejas[Familia de producto]), ALLSELECTED(Quejas[Producto]), ALLSELECTED(Quejas[Departamento]), ALLSELECTED(Quejas[Municipio]), ALLSELECTED(Quejas[Instancia])))
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: 85bde6d9-3047-4e78-9ee7-342fcaf06ab0
+		lineageTag: 9a200403-2b5b-441e-93a5-81a3937d3e15
 
 	measure 'Demás bancos (% del total)' = DIVIDE([Quejas demás bancos], CALCULATE([Quejas demás bancos], ALLSELECTED(Quejas[Categoría de motivo]), ALLSELECTED(Quejas[Motivo]), ALLSELECTED(Quejas[Familia de producto]), ALLSELECTED(Quejas[Producto]), ALLSELECTED(Quejas[Departamento]), ALLSELECTED(Quejas[Municipio]), ALLSELECTED(Quejas[Instancia])))
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: 7bdbfa06-f3c5-46d4-8378-37cdd9cf3f41
+		lineageTag: e7557c54-7f55-4637-93a5-dce7fb782d1f
 
 	measure 'Diferencia (pp)' = ([Davivienda (% del total)] - [Demás bancos (% del total)]) * 100
 		formatString: +0.0;-0.0;0.0
 		displayFolder: Pregunta 2
-		lineageTag: 9f071699-a57d-4c8e-804c-c26aacf19e38
+		lineageTag: a6e490dd-a1f5-4f45-a03b-0624685ae7c5
 
 	measure '% por fraude y seguridad' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Categoría de motivo] = "Fraude y seguridad"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Categoría de motivo])))
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: cb071870-43fb-4e0e-ae2b-2114d0271412
+		lineageTag: 0e9a1f77-c4ab-4d00-8374-fce195a4ce7a
 
 	measure 'Fraude Davivienda' = [% por fraude y seguridad]
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: 76ce9d93-5748-451f-970c-9fff7db48b26
+		lineageTag: 15da3632-3d19-4ce3-863d-662d37368395
 
 	measure 'Fraude demás bancos' = DIVIDE(CALCULATE([Quejas demás bancos], Quejas[Categoría de motivo] = "Fraude y seguridad"), CALCULATE([Quejas demás bancos], REMOVEFILTERS(Quejas[Categoría de motivo])))
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: 61b5ace3-4a98-4c9b-bf1d-47e7fe1b4c87
+		lineageTag: 4b427c2d-bce4-429f-961f-c61587a7dfb1
 
 	measure '% tarjetas de crédito' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Familia de producto] = "Tarjetas de crédito"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Familia de producto])))
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: 362e67d3-73f8-4116-808f-13d6b0c10df5
+		lineageTag: 7822b501-c233-4aa8-af03-84e4ea5104c3
 
 	measure 'Tarjetas demás bancos' = DIVIDE(CALCULATE([Quejas demás bancos], Quejas[Familia de producto] = "Tarjetas de crédito"), CALCULATE([Quejas demás bancos], REMOVEFILTERS(Quejas[Familia de producto])))
 		formatString: 0.0%
 		displayFolder: Pregunta 2
-		lineageTag: 7caef2c8-560f-4f2c-96f0-66c913d2049a
+		lineageTag: 655cb617-d1f6-4096-9693-7a4a7ac9b982
 
 	measure '% ante la Superintendencia' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Instancia] = "Superintendencia Financiera de Colombia"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Instancia])))
 		formatString: 0.0%
 		displayFolder: Pregunta 3
-		lineageTag: fff16f03-d5b6-4614-91a1-5112d340fba1
+		lineageTag: a5098fdb-3a78-4fc6-bbf7-cbc7d1558629
 
 	measure 'Ante la SFC Davivienda' = [% ante la Superintendencia]
 		formatString: 0.0%
 		displayFolder: Pregunta 3
-		lineageTag: 513a022b-e11d-43a4-a406-52b01ba1e816
+		lineageTag: 37be4866-aad7-4fc1-8b7a-5d581f935d8d
 
 	measure 'Ante la SFC demás bancos' = DIVIDE(CALCULATE([Quejas demás bancos], Quejas[Instancia] = "Superintendencia Financiera de Colombia"), CALCULATE([Quejas demás bancos], REMOVEFILTERS(Quejas[Instancia])))
 		formatString: 0.0%
 		displayFolder: Pregunta 3
-		lineageTag: d92f94b6-241a-43e2-a2f2-65d690a9d88c
+		lineageTag: 04bfc5fd-a664-4ad6-9f7c-04a3dbf0737c
+
+	measure 'Ante la SFC en 2026' = CALCULATE([% ante la Superintendencia], Calendario[Año] = 2026, Calendario[mes_completo] = TRUE())
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: 496a92bb-d36d-44d0-ba87-2c2bc8178293
+
+	measure '% radicadas en el banco' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Instancia] = "Entidad vigilada"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Instancia])))
+		formatString: 0.0%
+		displayFolder: Pregunta 3
+		lineageTag: cf8c1ac5-5996-4a8e-b11f-92bb8716438a
 
 	measure '% ante el Defensor' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Instancia] = "Defensor del consumidor financiero"), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Instancia])))
 		formatString: 0.0%
 		displayFolder: Pregunta 3
-		lineageTag: a4296a21-e337-4789-8fb0-17b15f5c6fa8
+		lineageTag: 3f832b69-2920-442a-adf1-f0f6c9cde33e
 
 	measure '% en Bogotá' = DIVIDE(CALCULATE([Quejas Davivienda], Quejas[Departamento] = "BOGOTÁ, D.C."), CALCULATE([Quejas Davivienda], REMOVEFILTERS(Quejas[Departamento])))
 		formatString: 0.0%
 		displayFolder: Pregunta 3
-		lineageTag: b299f329-890e-4c15-8519-4587068fe311
+		lineageTag: 93666068-48cb-4ff2-8929-b90663a6f107
 
 	measure 'Quejas por gran empresa' =
 			VAR razon = DIVIDE([Quejas Davivienda], SUM(ContextoDepto[Grandes empresas]))
@@ -148,13 +160,13 @@ table Quejas
 			RETURN IF(puesto <= 10, razon)
 		formatString: 0.0
 		displayFolder: Pregunta 3
-		lineageTag: 8710c955-2136-4b31-bacb-b1aca64a1585
+		lineageTag: 97d8d49f-3a42-47a3-b395-479af71a8474
 
 	column fecha
 		dataType: dateTime
 		isHidden
 		formatString: dd/mm/yyyy
-		lineageTag: fbe7a390-9d3c-4e32-90a9-e3b4f64d74d1
+		lineageTag: d6e7d12f-48f1-4745-900d-e14613b1fb33
 		summarizeBy: none
 		sourceColumn: fecha
 
@@ -166,7 +178,7 @@ table Quejas
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: a4089050-927e-42dc-a7fb-e558cd196b79
+		lineageTag: 6809ab27-d4d8-4f5c-a02e-7b1491a88b09
 		summarizeBy: none
 		sourceColumn: codigo_entidad
 
@@ -174,7 +186,7 @@ table Quejas
 
 	column Instancia
 		dataType: string
-		lineageTag: 020ca724-c856-4b14-8204-63ee0e963292
+		lineageTag: 4f850bf1-5995-4b17-9a3b-e7cd4e866c74
 		summarizeBy: none
 		sourceColumn: Instancia
 
@@ -182,7 +194,7 @@ table Quejas
 
 	column Motivo
 		dataType: string
-		lineageTag: 03c229e2-766a-4c1b-82f1-57d2b716315d
+		lineageTag: b66fc01c-df31-4574-b57e-33d4076eaccf
 		summarizeBy: none
 		sourceColumn: Motivo
 
@@ -190,7 +202,7 @@ table Quejas
 
 	column Producto
 		dataType: string
-		lineageTag: a28571ea-2d18-470a-a1aa-4fb04aa05180
+		lineageTag: cdc158e9-d637-4ece-aca0-efaf0c5da337
 		summarizeBy: none
 		sourceColumn: Producto
 
@@ -198,7 +210,7 @@ table Quejas
 
 	column Departamento
 		dataType: string
-		lineageTag: 5bbf6954-b4e8-4fd4-9360-4528ede930a8
+		lineageTag: 5f12e7d8-38b1-4809-911c-b6c82380e51f
 		summarizeBy: none
 		sourceColumn: Departamento
 
@@ -206,7 +218,7 @@ table Quejas
 
 	column Municipio
 		dataType: string
-		lineageTag: 370a9df2-28a1-482a-b337-eddbf3688a89
+		lineageTag: 23ae37ed-6b48-44d3-aa26-1f0286ec59df
 		summarizeBy: none
 		sourceColumn: Municipio
 
@@ -215,7 +227,7 @@ table Quejas
 	column 'Cantidad de quejas'
 		dataType: int64
 		formatString: #,0
-		lineageTag: 69e58e83-6b19-4419-86a1-0cc4883be64d
+		lineageTag: 62ed8c32-11e3-4386-b092-815c851af4f3
 		summarizeBy: sum
 		sourceColumn: Cantidad de quejas
 
@@ -223,7 +235,7 @@ table Quejas
 
 	column 'Familia de producto'
 		dataType: string
-		lineageTag: ab2e2c0c-ad57-4695-9c8a-9650f3c4b0e2
+		lineageTag: f94db46b-babe-4be0-b89e-59c7131f341e
 		summarizeBy: none
 		sourceColumn: Familia de producto
 
@@ -231,7 +243,7 @@ table Quejas
 
 	column 'Categoría de motivo'
 		dataType: string
-		lineageTag: c6465995-3e9a-4c54-a974-050b6deecb5c
+		lineageTag: 1a6a5533-6a5e-4e06-b7d3-22dbe609587a
 		summarizeBy: none
 		sourceColumn: Categoría de motivo
 

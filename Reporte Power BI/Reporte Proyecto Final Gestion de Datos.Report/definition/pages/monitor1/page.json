@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "monitor1",
+  "displayName": "Monitor · Evolución",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "rank",
+      "target": "anio",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "mes",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "k1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "k2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "k3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "k4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "evol",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "part",
+      "type": "NoFilter"
+    },
+    {
+      "source": "rank",
+      "target": "ctx",
+      "type": "NoFilter"
+    }
+  ]
+}

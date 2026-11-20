@@ -1,0 +1,151 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "reuniones",
+  "position": {
+    "x": 784,
+    "y": 116,
+    "z": 2000,
+    "height": 260,
+    "width": 472,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Reuniones (Microsoft Teams, 5 de 5 asistentes)",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "16 nov  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Carga, exploración y calidad",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "17 nov  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Preparación y visualización",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "19 nov  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#3987e5",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Elevator pitch y trabajo en equipo",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#181b1f'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2c3235'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

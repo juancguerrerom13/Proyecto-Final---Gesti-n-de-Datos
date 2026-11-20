@@ -1,12 +1,12 @@
-relationship 42a42757-d12e-4239-a716-0a63ac14453b
+relationship b82077d7-d96b-44ce-a271-c4e19eedd5b3
 	fromColumn: Quejas.codigo_entidad
 	toColumn: Bancos.codigo_entidad
 
-relationship 3d4dfed6-e28c-4023-8e7a-64c94f95fce0
+relationship 4f7741d6-cb73-404f-a5b2-1993c6a743b5
 	fromColumn: Quejas.fecha
 	toColumn: Calendario.fecha
 
-relationship 42aea576-ca9c-45bb-993c-2f3506556e65
+relationship b7c1be8e-66c4-44d9-8f81-a03734589799
 	fromColumn: Quejas.Departamento
 	toColumn: ContextoDepto.Departamento
 

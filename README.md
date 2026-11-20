@@ -51,6 +51,9 @@ El repositorio incluye la copia cruda descargada (`work/data/raw`), así que el 
 ├── docker-compose.yml              # Servicio Jupyter Lab (puerto 8888, solo localhost)
 ├── requirements.txt                # Librerías del proyecto
 ├── bitacora_agentica.md            # Registro de los prompts usados con IA
+├── trabajo_en_equipo.md            # Reglas del equipo, reuniones y evaluación (punto 7)
+├── guion_pitch.md                  # Guion del elevator pitch de 5 minutos
+├── Reporte_Proyecto_Final.pdf      # Reporte académico del proyecto
 └── Proyecto_Final.pdf              # Enunciado
 ```
 
@@ -98,14 +101,16 @@ docker compose down
 | Página | Contenido |
 |---|---|
 | Portada | Título, integrantes, cifras generales, fuentes y preguntas |
-| Pitch 1 · El problema | Promedio mensual de quejas y participación de Davivienda por año |
-| Pitch 2 · Las causas | Peso del fraude frente a los demás bancos; tarjetas de crédito, Bogotá y Superintendencia |
-| Pitch 3 · La propuesta | Qué se ofrece, qué gana el patrocinador y qué se haría con financiación |
-| Detalle 1 · Evolución y posición | Quejas mensuales, participación frente a Bancolombia, ranking de bancos y contexto de Grupo Bolívar |
-| Detalle 2 · Causas | Motivos, evolución del fraude, productos y detalle de motivos |
-| Detalle 3 · Gestión y territorio | Quejas ante la Superintendencia, instancias, departamentos y quejas por gran empresa |
+| 1 · El problema | Cifras clave y figuras 1 y 2 del reporte en PDF: quejas mensuales y participación frente a Bancolombia |
+| 2 · Las causas | Cifras clave y figuras 3 y 4: motivos de las quejas y peso del fraude |
+| 3 · Gestión y territorio | Cifras clave y figuras 5 y 6: quejas ante la Superintendencia y quejas por gran empresa del departamento |
+| 4 · La propuesta | Los cuatro beneficios del monitor y la segunda fase |
+| Monitor · Evolución | Tablero interactivo: quejas mensuales, participación, ranking de bancos y contexto de Grupo Bolívar |
+| Monitor · Causas | Tablero interactivo: motivos, fraude, productos y detalle por motivo |
+| Monitor · Territorio | Tablero interactivo: instancias, Superintendencia, departamentos y quejas por gran empresa |
+| Equipo | Roles, reuniones y evaluación |
 
-Las páginas son interactivas: un clic en cualquier gráfico filtra el resto de la página.
+Las páginas 1 a 4 son el elevator pitch y siguen el reporte en PDF. Las páginas del monitor son el prototipo del producto que se propone: se filtran por año y mes, y un clic en cualquier gráfico filtra el resto de la página. Todas las páginas tienen botones de navegación (en Power BI Desktop se usan con Ctrl + clic).
 
 1. Abra el `.pbip` con Power BI Desktop.
 2. Cambie el parámetro **RutaDatos** en *Transformar datos → Administrar parámetros* por la ruta de `work\data\processed\` en su equipo (debe terminar en `\`).

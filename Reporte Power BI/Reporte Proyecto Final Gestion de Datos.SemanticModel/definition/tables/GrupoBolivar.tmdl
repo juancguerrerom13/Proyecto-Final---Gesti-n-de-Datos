@@ -1,10 +1,10 @@
 table GrupoBolivar
-	lineageTag: 4d5ef613-f7fb-42dd-bad4-614ea32996a7
+	lineageTag: 25f49e9b-d4cf-40a4-a479-48b5b0bf3e46
 
 	column Año
 		dataType: int64
 		formatString: 0
-		lineageTag: f8cde492-9094-4cc0-8f73-231015d44ea1
+		lineageTag: 69d453b8-a0f4-4fcc-a074-411d019ddcca
 		summarizeBy: none
 		sourceColumn: Año
 
@@ -13,7 +13,7 @@ table GrupoBolivar
 	column 'Ingresos operacionales'
 		dataType: double
 		formatString: 0.00
-		lineageTag: bda183aa-6314-4e6b-a840-2a1986f2a765
+		lineageTag: 01e88b2b-1046-4716-9435-856e7382e722
 		summarizeBy: sum
 		sourceColumn: Ingresos operacionales
 
@@ -22,7 +22,7 @@ table GrupoBolivar
 	column Ganancia
 		dataType: double
 		formatString: 0.00
-		lineageTag: 0f4a5d43-c338-4c49-8ab4-2c537884dd0b
+		lineageTag: 31bc8089-862a-4dba-a835-bef6cc018774
 		summarizeBy: sum
 		sourceColumn: Ganancia
 
@@ -31,7 +31,7 @@ table GrupoBolivar
 	column 'Total activos'
 		dataType: double
 		formatString: 0.00
-		lineageTag: 6a077f27-1bf8-4f00-ad7c-8338215c9c4c
+		lineageTag: de09e7f0-e306-420b-bcd9-4d1f368499e1
 		summarizeBy: sum
 		sourceColumn: Total activos
 

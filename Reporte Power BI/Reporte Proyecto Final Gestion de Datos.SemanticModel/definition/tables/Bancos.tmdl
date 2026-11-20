@@ -1,11 +1,11 @@
 table Bancos
-	lineageTag: b9ec7e3c-6a49-4f86-a14d-1c5d891e2bfe
+	lineageTag: 86fc087b-1183-4653-aa0e-de041c046729
 
 	column codigo_entidad
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: f8c67d63-baff-487b-a194-966d170515fa
+		lineageTag: 8462675c-90fd-41a6-b278-5713cf476cc5
 		summarizeBy: none
 		sourceColumn: codigo_entidad
 
@@ -13,7 +13,7 @@ table Bancos
 
 	column Banco
 		dataType: string
-		lineageTag: ae7d0ad2-7db0-4123-ae49-479b08b57f76
+		lineageTag: 2e26a315-a973-4cdd-a722-4a446b843fa8
 		summarizeBy: none
 		sourceColumn: Banco
 
@@ -21,7 +21,7 @@ table Bancos
 
 	column Grupo
 		dataType: string
-		lineageTag: db891c1e-be97-44de-85b5-06ffe497347b
+		lineageTag: c7aa12de-7ff8-4a64-b0f7-faacd1204a69
 		summarizeBy: none
 		sourceColumn: Grupo
 
@@ -29,7 +29,7 @@ table Bancos
 
 	column 'Razón social'
 		dataType: string
-		lineageTag: f47a6101-e63e-4270-80d8-6c8335ef80d3
+		lineageTag: 7ef270aa-4d2c-414d-9c99-f1b4b7e11a66
 		summarizeBy: none
 		sourceColumn: Razón social
 

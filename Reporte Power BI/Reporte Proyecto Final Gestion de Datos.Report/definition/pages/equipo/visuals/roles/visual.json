@@ -1,0 +1,189 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "roles",
+  "position": {
+    "x": 24,
+    "y": 116,
+    "z": 1000,
+    "height": 400,
+    "width": 740,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Roles",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#f4f5f6",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Juan Camilo Guerrero  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Entorno de desarrollo, estructura del notebook y agente de IA",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Luis Alberto Banda  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Selección y limpieza de los datos para la exploración",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Maria Camila Rincón  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Selección de la base de datos, contexto del negocio y objetivos",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Juan Pablo Marin  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Objetivos y análisis de Davivienda; lideró las decisiones sobre los datos",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Gabriel Camilo Velasquez  ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#e6e7e8",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Selección y decisiones sobre la base de quejas",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#a7abb1"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#181b1f'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2c3235'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

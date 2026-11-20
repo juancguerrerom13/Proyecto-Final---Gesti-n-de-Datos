@@ -3,9 +3,9 @@
   "name": "preguntas",
   "position": {
     "x": 652,
-    "y": 398,
+    "y": 400,
     "z": 7000,
-    "height": 270,
+    "height": 260,
     "width": 580,
     "tabOrder": 7000
   },
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Las tres preguntas",
+                    "value": "Tres preguntas",
                     "textStyle": {
                       "fontSize": "14pt",
                       "color": "#f4f5f6",
@@ -39,7 +39,7 @@
                     }
                   },
                   {
-                    "value": "Evolución y posición: ¿las quejas contra Davivienda crecen y gana o pierde participación frente a los demás bancos?",
+                    "value": "¿Las quejas crecen y la marca gana o pierde participación?",
                     "textStyle": {
                       "fontSize": "10.5pt",
                       "color": "#e6e7e8"
@@ -58,7 +58,7 @@
                     }
                   },
                   {
-                    "value": "Causas: ¿qué motivos y productos concentran las quejas y cuáles son propios de la marca?",
+                    "value": "¿Qué motivos y productos son propios de la marca?",
                     "textStyle": {
                       "fontSize": "10.5pt",
                       "color": "#e6e7e8"
@@ -77,7 +77,7 @@
                     }
                   },
                   {
-                    "value": "Gestión y territorio: ¿cuántas quejas llegan al regulador y dónde se concentra la insatisfacción?",
+                    "value": "¿Cuántas quejas llegan al regulador y dónde se concentran?",
                     "textStyle": {
                       "fontSize": "10.5pt",
                       "color": "#e6e7e8"
@@ -86,6 +86,63 @@
                 ]
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#181b1f'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2c3235'"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       ]

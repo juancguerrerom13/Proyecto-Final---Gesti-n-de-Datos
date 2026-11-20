@@ -212,6 +212,20 @@
         ]
       }
     },
+    "actionButton": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
     "slicer": {
       "*": {
         "items": [
